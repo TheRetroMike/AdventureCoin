@@ -45,10 +45,10 @@ uint256 CBlockHeader::GetPoWHash() const
     
     yespower_params_t yespower_1_0_v2 = {
         .version = YESPOWER_1_0, 
-        .N = 4096, 
-        .r = 16, 
-        .pers = NULL,
-        .perslen = 0
+        .N = 2048, 
+        .r = 32, 
+        .pers = (const uint8_t *)"The quest begins",
+        .perslen = 16
     };
 
     uint32_t time = le32dec(&ss[68]);
