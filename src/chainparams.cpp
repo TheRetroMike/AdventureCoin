@@ -77,19 +77,19 @@ class CMainParams : public CChainParams {
 public:
     CMainParams() {
         strNetworkID = "main";
-        consensus.nSubsidyHalvingInterval = 800000;
+        consensus.nSubsidyHalvingInterval = 300000;
         consensus.BIP16Height = 0; // fixed
-        consensus.BIP34Height = 700000;
+        consensus.BIP34Height = 1;
 //		consensus.BIP34Height = 17;
 //        consensus.BIP34Hash = uint256();
 //        consensus.BIP34Hash = uint256S("");   // FIXME.SUGAR
-        consensus.BIP34Hash = uint256S("0x00001828d845205a951f9609e011775e035b00c7fb476310261ef30460cdccab"); // 0
+        consensus.BIP34Hash = uint256S("0x0"); // 0
 //        consensus.BIP34Hash = uint256S("0x0000095cbce2ac764515575e10964d595349440ac9fc89be908f4126479901c6"); // 17
         consensus.BIP65Height = 700000;
         consensus.BIP66Height = 700000;
         consensus.powLimit = uint256S("0x3fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
         consensus.nPowTargetTimespan = 14 * 24 * 60 * 60; // two weeks
-        consensus.nPowTargetSpacing = 120;
+        consensus.nPowTargetSpacing = 180;
         consensus.fPowAllowMinDifficultyBlocks = false;
         consensus.fPowNoRetargeting = false;
         consensus.nRuleChangeActivationThreshold = 9576; // 95%
@@ -128,11 +128,11 @@ public:
         nDefaultPort = 5403;
        nPruneAfterHeight = 100000;
 
-        genesis = CreateGenesisBlock(1745076942, 117295, 0x1e3fffff, 1, 100 * COIN);
+        genesis = CreateGenesisBlock(1745186688, 100506, 0x1e3fffff, 1, 300 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-       
-        assert(consensus.hashGenesisBlock == uint256S("0xc12e0f6a7c2101ac1078b1378c7a8415a5b41ad77fa2f4d2f5cfc789967ba275"));
-        assert(genesis.hashMerkleRoot == uint256S("0xb303ffcf59d319c06aa10c8f34aa92980868a5049bd234d3c70f1f60d3186155"));
+
+        assert(consensus.hashGenesisBlock == uint256S("0x9ecb20dfd373c3574587fc166f5142f15552586a6f6f9d761d8991bf9ec9e06b"));
+        assert(genesis.hashMerkleRoot == uint256S("0xe3c50fc5e5111951fb44d634a8907b732822e43466c519c4efa16717d92f3ce4"));
 
         // Note that of those which support the service bits prefix, most only support a subset of
         // possible options.
@@ -157,7 +157,7 @@ public:
 
         checkpointData = {
             {
-                {0, uint256S("0xc12e0f6a7c2101ac1078b1378c7a8415a5b41ad77fa2f4d2f5cfc789967ba275")},
+                {0, uint256S("0x9ecb20dfd373c3574587fc166f5142f15552586a6f6f9d761d8991bf9ec9e06b")},
                 
             }
         };
@@ -189,15 +189,15 @@ class CTestNetParams : public CChainParams {
 public:
     CTestNetParams() {
         strNetworkID = "test";
-        consensus.nSubsidyHalvingInterval = 800000;
+        consensus.nSubsidyHalvingInterval = 300000;
         consensus.BIP16Height = 0; // fixed
         consensus.BIP34Height = 0;
-        consensus.BIP34Hash = uint256S("0x00002a66f0c687f619934409d376c52fe721833f05940e4c20deaaa0122d7fb8");
+        consensus.BIP34Hash = uint256S("0x00");
         consensus.BIP65Height = 12720;
         consensus.BIP66Height = 12720;
         consensus.powLimit = uint256S("0x3fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
         consensus.nPowTargetTimespan = 14 * 24 * 60 * 60; // two weeks
-        consensus.nPowTargetSpacing = 120;
+        consensus.nPowTargetSpacing = 180;
         //consensus.nZawyLwmaAveragingWindow = 90;
         consensus.fPowAllowMinDifficultyBlocks = true;
         consensus.fPowNoRetargeting = false;
@@ -230,11 +230,11 @@ public:
         nDefaultPort = 15403;
         nPruneAfterHeight = 1000;
 
-        genesis = CreateGenesisBlock(1744997339, 522125, 0x1e3fffff, 1, 100 * COIN);
+        genesis = CreateGenesisBlock(1745191593, 347173, 0x1e3fffff, 1, 300 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
 
-        assert(consensus.hashGenesisBlock == uint256S("0xb8ea3be78b93dc5552b4e432b6c8ada88e9e0870e401a3bb0b724a4e95a23b56"));
-        assert(genesis.hashMerkleRoot == uint256S("0xb303ffcf59d319c06aa10c8f34aa92980868a5049bd234d3c70f1f60d3186155"));
+        assert(consensus.hashGenesisBlock == uint256S("0x45c5f31868b17c75bc806e8cc2d3493bcf4b621c7ac698f770999ab5b201c7c4"));
+        assert(genesis.hashMerkleRoot == uint256S("0xe3c50fc5e5111951fb44d634a8907b732822e43466c519c4efa16717d92f3ce4"));
 
         vFixedSeeds.clear();
         vSeeds.clear();
@@ -262,7 +262,7 @@ public:
 
         checkpointData = {
             {
-                {0, uint256S("0xb8ea3be78b93dc5552b4e432b6c8ada88e9e0870e401a3bb0b724a4e95a23b56")},
+                {0, uint256S("0x45c5f31868b17c75bc806e8cc2d3493bcf4b621c7ac698f770999ab5b201c7c4")},
             }
         };
 
@@ -319,11 +319,11 @@ public:
         nDefaultPort = 25403;
         nPruneAfterHeight = 1000;
 
-        genesis = CreateGenesisBlock(1744994939, 1, 0x207fffff, 1, 100 * COIN);
+        genesis = CreateGenesisBlock(1744994939, 1, 0x207fffff, 1, 300 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-        
-        assert(consensus.hashGenesisBlock == uint256S("0x78da468112b45d77dc9b33054c8a713c4677a1c8954d366470b8c481a14824d3"));
-        assert(genesis.hashMerkleRoot == uint256S("0xb303ffcf59d319c06aa10c8f34aa92980868a5049bd234d3c70f1f60d3186155"));
+
+        assert(consensus.hashGenesisBlock == uint256S("0x953153495d694f9732bd454174ab9d89065a35427684b55d07cb11cf9b7d1841"));
+        assert(genesis.hashMerkleRoot == uint256S("0xe3c50fc5e5111951fb44d634a8907b732822e43466c519c4efa16717d92f3ce4"));
 
         vFixedSeeds.clear(); //!< Regtest mode doesn't have any fixed seeds.
         vSeeds.clear();      //!< Regtest mode doesn't have any DNS seeds.
@@ -334,7 +334,7 @@ public:
 
         checkpointData = {
             {
-                {0, uint256S("0x78da468112b45d77dc9b33054c8a713c4677a1c8954d366470b8c481a14824d3")},
+                {0, uint256S("0x953153495d694f9732bd454174ab9d89065a35427684b55d07cb11cf9b7d1841")},
             }
         };
 
