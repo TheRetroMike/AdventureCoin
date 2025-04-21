@@ -239,11 +239,11 @@ public:
         vFixedSeeds.clear();
         vSeeds.clear();
         // nodes with support for servicebits filtering should be at the top
-        /*
-        vSeeds.emplace_back("testnet-seed.bitcoin.jonasschnelli.ch");
+        
+        vSeeds.emplace_back("157.180.76.198");
         //vSeeds.emplace_back("seed.adventurecoin.org", false);
         //vSeeds.emplace_back("testnet-seed.adventurecoin.jp", false);
-        */
+        
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,83);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,197);
@@ -263,6 +263,7 @@ public:
         checkpointData = {
             {
                 {0, uint256S("0x45c5f31868b17c75bc806e8cc2d3493bcf4b621c7ac698f770999ab5b201c7c4")},
+                {5, uint256s("0x745b8dfd0accca345cc484ac3a74a70511292d53ea1c5c8b06f570856b2af1f4")},
             }
         };
 
