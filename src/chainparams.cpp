@@ -85,8 +85,8 @@ public:
 //        consensus.BIP34Hash = uint256S("");   // FIXME.SUGAR
         consensus.BIP34Hash = uint256S("0x0"); // 0
 //        consensus.BIP34Hash = uint256S("0x0000095cbce2ac764515575e10964d595349440ac9fc89be908f4126479901c6"); // 17
-        consensus.BIP65Height = 700000;
-        consensus.BIP66Height = 700000;
+        consensus.BIP65Height = 2;
+        consensus.BIP66Height = 3;
         consensus.powLimit = uint256S("0x3fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
         consensus.nPowTargetTimespan = 14 * 24 * 60 * 60; // two weeks
         consensus.nPowTargetSpacing = 180;
