@@ -105,12 +105,10 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].nTimeout = 1612051200; // 31 Jan 2021
 
         // The best chain should have at least this much work.
-        //consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000000000001b5fbaba4d"); // 0
-		consensus.nMinimumChainWork = uint256S("0x0"); // 5000
+		consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000000000000000180000"); // 5
 
         // By default assume that the signatures in ancestors of this block are valid.
-        //consensus.defaultAssumeValid = uint256S("0x00001828d845205a951f9609e011775e035b00c7fb476310261ef30460cdccab");// 0
-		consensus.defaultAssumeValid = uint256S("0x0"); // 5000
+		consensus.defaultAssumeValid = uint256S("0x0"); // 5
 
         // 10% of Block reward to operations wallet
         nDeveloperFee = 10;
