@@ -1,155 +1,118 @@
-AdventureCoin Core
-=====================================
 
-https://adventurecoincoin.info
+<h1 align="center">
+<img src="https://i.imgur.com/uktT3CY.png" alt="AdventureCoin" width="300"/>
+<br/><br/>
+AdventureCoin Core [ADVC]  
+</h1>
 
-**Download latest wallet:**
-https://github.com/adventurecoincoin/adventurecoin/releases
+Select language: EN | [CN](./translations/README_zh_CN.md) | [PT](./translations/README_pt_BR.md) | [FA](./translations/README_fa_IR.md) | [VI](./translations/README_vi_VN.md) | [JA](./translations/README_ja_JP.md)
 
-**AdventureCoin 5.0.0 released**
-The full transition to version 5 will be January 30, 2023.
-The old version will no longer work after Jan. 30.
-The new version is backward-compatible and works fine now, so you can migrate now.
+## Welcome, Adventurer! 🌍  
+Embark on a journey with **AdventureCoin**, a crypto treasure built for the people, by the people. AdventureCoin is not just a currency — it's a quest to bring cryptocurrency to all who seek it. With no ASICs, no ICO, and no premine, AdventureCoin is **for the people**, by the people.
 
-What is AdventureCoin Coin?
+In this world, **only CPUs** will lead you to victory. Whether you're using an ancient desktop or a modern machine, **AdventureCoin** can be mined by anyone who has a computer processor. It’s decentralized, fair, and a step towards a new world where power lies in the hands of the many.
 
-----------------
+AdventureCoin Core is the gateway to this new world, offering a **layer 1 blockchain** experience with the **yespowerADVC** algorithm, ensuring that mining remains a truly **fair quest** for all.
 
-![screenshot](https://raw.githubusercontent.com/adventurecoincoin/adventurecoin/adventurecoin-5.0.0/docs/screen.png)
-![](https://raw.githubusercontent.com/adventurecoincoin/adventurecoin/adventurecoin-4.0.0/docs/images/header-teamwork.png)
+For information about the default fees used on the AdventureCoin network, please refer to the [fee recommendation](doc/fee-recommendation.md).
 
-# AdventureCoin is a cryptocurrency of the cpu, by the cpu, for the cpu.
-No ASIC mineable. No ICO. No premine.
+**Website:** [AdventureCoin](https://www.adventurecoin.quest/).
 
-AdventureCoin Coin is a cryptocoin only for processors.
-Our coin has a very large and sociable community. The main team members are located in Japan, America and Russia.
-The coin does not have a premine, the coins are equally apportioned among all mining participants. Some time ago AdventureCoin Coin almost died, but it was able to resurrect as a phoenix and is now actively developing.
+---
 
-The purpose of the coin is to give everyone the opportunity to enter the cryptoworld, everyone who has an average processor in a computer can mine it. It is very similar to Doge Coin, but only for processors (we are against mining on video cards - this gives mining concentration in one hand), we are for decentralization.
+## The Realm of AdventureCoin ✨
 
-**What can you do to develop a coin?**
-To tell about the coin everyone and everywhere, to educate, to help tune miners and wallets. The potential audience of the coin is people who play online games on home computers and all who are interested in new technologies.
+In the land of **AdventureCoin**, only CPUs may mine. The journey begins with the basics: A simple, fair blockchain with **no ICO, no premine**, and no centralized control. This is a **decentralized cryptoworld** for all.
 
-**What we work on:**
+**Key Features:**
+- **No ASIC Mining**: Fair to all adventurers.
+- **No ICO**: The treasure is earned, not bought.
+- **No Premine**: Coins are shared equally among miners.
+- **CPU Mining Only**: Join the quest with just a computer processor.
 
- 1. A new, improved design of the official website (www.adventurecoincoin.info)
- 
- 2. A convenient installer for the official "cold" wallet with step-by-step hints and instructions built-in. These instructions will include both text and visual hints useful for novices who decided to use our utility for fast downloading of the cold wallet based on the full AdventureCoin blockchain.
+---
 
- 3. Adding AdventureCoin to as many exchanges as possible.
+## The Path of the Coin ⚔️
 
- 4. Creation of database with "how-to-use" instructions for the official wallet, the exchanges, miners etc at the partner's website (www.cpu-mining.info)
+AdventureCoin is built upon a journey that mirrors the excitement and spirit of early cryptocurrencies like Dogecoin. However, our treasure is far more accessible — **no video cards** allowed! Here, we fight for **true decentralization**. With your trusty CPU, you can embark on an epic quest to mine AdventureCoin and join a thriving community of adventurers.
 
- 5. Banner advertisement on the (www.cpu-mining.info) - AdventureCoin coin as easy-for-use, "a coin for everyone".
+---
 
- 6. Final release of the official GUI-miner with the menu and embedded links to a coin resources.
+## Usage Guide 🧭
 
- 7. Bounty program.
+To set forth on your journey, follow the [installation guide](INSTALL.md) and get started with the [tutorial](doc/getting-started.md). Whether you're a seasoned crypto adventurer or a fresh recruit, you’ll find the tools to mine AdventureCoin and become a part of the community.
 
- 8. Creation and maintenance of topics about AdventureCoin on cryptocurrency forums.
+The AdventureCoin Core provides a **JSON-RPC API** that is self-documenting. Use `adventurecoin-cli help` for command guidance, and visit the [Bitcoin Core documentation](https://developer.bitcoin.org/reference/rpc/) for further details on the protocol.
 
- 9. Positioning of AdventureCoin as a "cryptocoin for everyone": everyone will be able to get it even with a typical home computer - it is easy and simple.
+---
 
-10. Advertisement of AdventureCoin at the game forums, youth engagement.
+### Ports of the Realm ⚡
 
-**Our official motto:** "AdventureCoin - a cryptocoin for CPU-mining only; fast transactions, easy-in-use and safe official wallet. We are like Dogecoin, but CPU-only!"
+Here are the ports that guide the flow of transactions and power across the **AdventureCoin** network:
 
-In general, the work is in full swing - there are lots of ideas, the coin and algorithm are excellent.
+| Function | mainnet | testnet | regtest |
+| :------- | ------: | ------: | ------: |
+| P2P      |   5403  |  15403  |  25403  |
+| RPC      |   9982  |  19982  |  18433  |
 
-**Why don't we have a roadmap?**
-We constantly monitor the market and technology, develop together with the world, we do not have a specific person who does something and then receives all the profit from the project. The project belongs to all of you, to the whole community, everyone is doing something. We are always open to new ideas, developments and implementations.
+It is **strongly recommended** to **not expose** your RPC ports to the public internet, as they serve as the heart of the network’s communication.
 
+---
 
+## Ongoing Development 🛠️
 
-# Build adventurecoind on Ubuntu 16.04, 18.04
-http://cpu-mining.info/post.php?post=4
+**AdventureCoin Core** is an open-source, community-driven project. Our quest for growth is always evolving, and the community plays a central role in shaping the future of AdventureCoin.
 
-```
-sudo add-apt-repository universe
-sudo apt-get update
-sudo apt-get install git
-sudo apt-get install build-essential
-sudo apt-get install libtool autotools-dev autoconf
-sudo apt-get install libssl-dev
-sudo apt-get install libboost-all-dev
-sudo apt-get install pkg-config
-sudo apt-get install libevent-dev
-sudo apt-get install libzmq3-dev
-sudo add-apt-repository ppa:bitcoin/bitcoin
-sudo apt-get update
-sudo apt-get install libdb4.8-dev
-sudo apt-get install libdb4.8++-dev
+Key resources:
+- [GitHub Projects](https://github.com/AdventureCoin-ADVC/AdventureCoin/projects) — Track our journey with planned and in-progress work.
+- [GitHub Discussions](https://github.com/AdventureCoin-ADVC/AdventureCoin/discussions) — Share ideas, features, and thoughts for future releases.
+- [AdventureCoin subreddit](https://www.reddit.com/r/AdventureCoin/) — Join the adventurers' hub!
 
-git clone https://github.com/adventurecoincoin/adventurecoin.git
-cd adventurecoin
-./autogen.sh
-./configure --enable-upnp-default --without-gui
-make -j 4
-```
+---
 
-# Build adventurecoind on Ubuntu 20.04
-http://cpu-mining.info/post.php?post=5
+### Versioning and Branches ⚔️
 
-```
-sudo add-apt-repository universe
-sudo apt-get update
-sudo apt-get install git
-sudo apt-get install build-essential
-sudo apt-get install libtool autotools-dev autoconf
-sudo apt-get install libssl-dev
-sudo apt-get install libboost-all-dev
-sudo apt-get install pkg-config
-sudo apt-get install libevent-dev
-sudo apt-get install libzmq3-dev
+Our version numbers follow a **major.minor.patch** strategy.
 
-git clone https://github.com/adventurecoincoin/adventurecoin.git
-cd adventurecoin
-cd contrib
-chmod +x install_db4.sh
-./install_db4.sh .
-cd ..
-./autogen.sh
-export BDB_PREFIX='/home/ubuntu/adventurecoin/contrib/db4'
-./configure --enable-upnp-default --without-gui BDB_LIBS="-L${BDB_PREFIX}/lib -ldb_cxx-4.8" BDB_CFLAGS="-I${BDB_PREFIX}/include"
-make -j 4
-```
+Branches are divided as follows:
+- **master**: Stable, containing the latest official release.
+- **maintenance**: Stable, containing previous releases under active maintenance.
+- **development**: Unstable, where new features and improvements are forged.
 
-**conf file (adventurecoin.conf)**
-```
-cd ~/.adventurecoin/
-nano adventurecoin.conf
-```
+Contributions:
+- **New Features** → Submit to the **development** branch.
+- **Bug Fixes** → Submit to the **maintenance** branch.
 
-```
-server=1
-daemon=1
-gen=0
-rpcuser=user
-rpcpassword=your_password
-rpcallowip=your_network/your_mask
-rpcallowip=127.0.0.1
-addnode=185.185.70.244:9981
-addnode=spbird.mydns.jp:9981
-```
+---
 
-Other node links
-----------------
+## Contributing to the Quest 🤝
 
-&nbsp;  http://advc.ccore.online/connections
-  
-&nbsp;  https://leywapool.com/explorer/peers?id=1428
-  
-&nbsp;  http://explorer.adventurecoincoin.info/network
+Ready to join the adventure and help build the future of AdventureCoin? Report bugs, suggest features, or submit pull requests via the [issue tracker](https://github.com/AdventureCoin-ADVC/AdventureCoin/issues/new?assignees=&labels=bug&template=bug_report.md&title=%5Bbug%5D+).
 
-Pool list
----------
+Check out the [contribution guide](CONTRIBUTING.md) for ways to get involved in our mission. Whether it’s helping with code, documentation, or spreading the word, **every adventurer counts**.
 
-&nbsp; https://miningpoolstats.stream/adventurecoin
+---
 
+## Join the Adventure! 🌟
 
+Our community is a place of camaraderie and excitement. Meet fellow adventurers, share your stories, discuss the future of the coin, and find out what’s going on in the world of AdventureCoin.
 
-License
--------
+Here’s where the fellowship gathers:
+- [Discord](https://discord.gg/4TfdDpgkbN)
 
-AdventureCoin Core is released under the terms of the MIT license. See [COPYING](COPYING) for more
-information or see https://opensource.org/licenses/MIT.
+---
+
+## Frequently Asked Questions ❓
+
+Got questions? The answers may already be waiting for you in the [FAQ](doc/FAQ.md) or the [Q&A section](https://github.com/AdventureCoin-ADVC/AdventureCoin/discussions/categories/q-a).
+
+---
+
+## License ⚖️
+
+AdventureCoin Core is released under the **MIT License**.  
+See [COPYING](COPYING) or visit [opensource.org](https://opensource.org/licenses/MIT) for more details.
+
+---
+
+🚀 Ready to start your adventure? Let’s make the crypto world more decentralized, one CPU at a time. 🌍
