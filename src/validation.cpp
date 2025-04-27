@@ -2263,11 +2263,19 @@ bool CChainState::ConnectBlock(const CBlock& block, CValidationState& state, CBl
                                if (!IsValidDestination(destDeveloperFeeAddress)) {
                                    LogPrintf("IsValidDestination: Invalid ADVC address %s \n", GetDeveloperFeeAddress);
                                }
-                               CAmount nDeveloperFeeStart = Params().DeveloperFeeStart();
-                               CScript scriptPubKeyDeveloperFeeAddress = GetScriptForDestination(destDeveloperFeeAddress);
-                               CAmount nDeveloperFeeAmount = Params().DeveloperFee();
-                               CAmount nSubsidy = GetcoinBlockSubsidy(pindex->nHeight, chainparams.GetConsensus(pindex->nHeight), hashPrevBlock);
-                               CAmount nDeveloperFeeAmountValue = nSubsidy * nDeveloperFeeAmount / 100;
+                               // Get the start height for developer fee activation
+                                CAmount nDeveloperFeeStart = Params().DeveloperFeeStart();
+
+                                // Get the developer fee address and the script associated with it
+                                CScript scriptPubKeyDeveloperFeeAddress = GetScriptForDestination(destDeveloperFeeAddress);
+
+                                // Get the developer fee percentage and the subsidy amount
+                                CAmount nDeveloperFeeAmount = Params().DeveloperFee();
+                                CAmount subsidy = GetBlockSubsidy(pindex->nHeight, chainparams.GetConsensus());
+
+                                // Calculate the developer fee amount as a percentage of the subsidy
+                                CAmount nDeveloperFeeAmountValue = subsidy * nDeveloperFeeAmount / 100;
+
                            
                                // ! Uncomment these if you want to debug the values!
                                // LogPrintf("==>GetDeveloperFeeAddress: (validation)   %s \n", GetDeveloperFeeAddress);

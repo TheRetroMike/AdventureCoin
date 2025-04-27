@@ -20,6 +20,7 @@
 #include <rpc/blockchain.h>
 #include <rpc/mining.h>
 #include <rpc/server.h>
+#include "script/standard.h"  
 #include <txmempool.h>
 #include <util.h>
 #include <utilstrencodings.h>
@@ -655,20 +656,33 @@ UniValue getblocktemplate(const JSONRPCRequest& request)
     result.push_back(Pair("coinbaseaux", aux));
     result.push_back(Pair("coinbasevalue", (int64_t)pblock->vtx[0]->vout[0].nValue));
 
-    UniValue developerObj(UniValue::VOBJ); // Create a nested JSON object for developer fee details
+    UniValue developerObj(UniValue::VOBJ);
     CAmount nDeveloperFeeStart = Params().DeveloperFeeStart();
-    // Check if developer fees are activated
+    
+   // Check if developer fees are activated
     if (pindexPrev->nHeight + 1 >= nDeveloperFeeStart) {
-        // Extract developer fee details from the coinbase transaction
-        if (pblock->vtx[0]->vout.size() > 1) { // Ensure the developer output exists
+        if (pblock->vtx[0]->vout.size() > 1) {
             CTxDestination address;
-            ExtractDestination(pblock->vtx[0]->vout[1].scriptPubKey, address);
-            CBitcoinAddress address2(address);
 
-            // Add developer fee details to the nested JSON object
-            developerObj.pushKV("payee", address2.ToString());
-            developerObj.pushKV("script", HexStr(pblock->vtx[0]->vout[1].scriptPubKey.begin(), pblock->vtx[0]->vout[1].scriptPubKey.end()));
-            developerObj.pushKV("amount", (int64_t)pblock->vtx[0]->vout[1].nValue);
+            // Ensure we can extract a valid address from the output script
+            if (ExtractDestination(pblock->vtx[0]->vout[1].scriptPubKey, address)) {
+                // Declare and initialize strDeveloperFeeAddress with the correct value
+                std::string strDeveloperFeeAddress = "AeD4pPi3D5kB9aMEgH3eRHoD6XMKbrpRAW"; // Replace with actual address
+
+                // Decode and validate the developer fee address
+                CTxDestination dest = DecodeDestination(strDeveloperFeeAddress);
+                if (!IsValidDestination(dest)) {
+                    throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid address");
+                }
+
+                // Add developer fee details to the nested JSON object
+                developerObj.pushKV("payee", EncodeDestination(dest));
+                developerObj.pushKV("script", HexStr(pblock->vtx[0]->vout[1].scriptPubKey.begin(), pblock->vtx[0]->vout[1].scriptPubKey.end()));
+                developerObj.pushKV("amount", (int64_t)pblock->vtx[0]->vout[1].nValue);
+            } else {
+                // If extraction fails, handle it
+                throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Unable to extract destination from script.");
+            }
         } else {
             // If the developer output is missing, add placeholder values
             developerObj.pushKV("payee", "Developer Fee Not Found");
@@ -685,7 +699,7 @@ UniValue getblocktemplate(const JSONRPCRequest& request)
     // Add the developer object to the result
     result.pushKV("developer", developerObj);
     result.pushKV("developer_fees_started", pindexPrev->nHeight + 1 >= nDeveloperFeeStart);
-    
+
     result.push_back(Pair("longpollid", chainActive.Tip()->GetBlockHash().GetHex() + i64tostr(nTransactionsUpdatedLast)));
     result.push_back(Pair("target", hashTarget.GetHex()));
     result.push_back(Pair("mintime", (int64_t)pindexPrev->GetMedianTimePast()+1));
