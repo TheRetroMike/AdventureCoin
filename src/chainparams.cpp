@@ -80,11 +80,7 @@ public:
         consensus.nSubsidyHalvingInterval = 300000;
         consensus.BIP16Height = 0; // fixed
         consensus.BIP34Height = 1;
-//		consensus.BIP34Height = 17;
-//        consensus.BIP34Hash = uint256();
-//        consensus.BIP34Hash = uint256S("");   // FIXME.SUGAR
-        consensus.BIP34Hash = uint256S("0x0"); // 0
-//        consensus.BIP34Hash = uint256S("0x0000095cbce2ac764515575e10964d595349440ac9fc89be908f4126479901c6"); // 17
+        consensus.BIP34Hash = uint256S("0x4d871c6e7e80fac692c4133a44dfd2222fa444aeefbced1dd80a0284dc677988"); // 1
         consensus.BIP65Height = 2;
         consensus.BIP66Height = 3;
         consensus.powLimit = uint256S("0x3fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
@@ -167,6 +163,7 @@ public:
         checkpointData = {
             {
                 {0, uint256S("0xda4aaa17fd5f1c7db85cfebdb56e1b5d89739b9bf8c7a23c4cdf07a9649469a8")},
+                {5, uint256S("0xd7a52de54b9482af1ca65e2863a6e28a3af6caaeb28d71056aaa089e0fecf4a5")},
                 
             }
         };
