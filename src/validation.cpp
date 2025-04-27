@@ -6,6 +6,7 @@
 #include <validation.h>
 
 #include <arith_uint256.h>
+#include <base58.h>
 #include <chain.h>
 #include <chainparams.h>
 #include <checkpoints.h>
@@ -2256,7 +2257,50 @@ bool CChainState::ConnectBlock(const CBlock& block, CValidationState& state, CBl
                          error("ConnectBlock(): coinbase pays too much (actual=%d vs limit=%d)",
                                block.vtx[0]->GetValueOut(), blockReward),
                                REJECT_INVALID, "bad-cb-amount");
+    
+                               std::string GetDeveloperFeeAddress = Params().DeveloperFeeAddress();
+                               CTxDestination destDeveloperFeeAddress = DecodeDestination(GetDeveloperFeeAddress);
+                               if (!IsValidDestination(destDeveloperFeeAddress)) {
+                                   LogPrintf("IsValidDestination: Invalid ADVC address %s \n", GetDeveloperFeeAddress);
+                               }
+                               // Get the start height for developer fee activation
+                                CAmount nDeveloperFeeStart = Params().DeveloperFeeStart();
 
+                                // Get the developer fee address and the script associated with it
+                                CScript scriptPubKeyDeveloperFeeAddress = GetScriptForDestination(destDeveloperFeeAddress);
+
+                                // Get the developer fee percentage and the subsidy amount
+                                CAmount nDeveloperFeeAmount = Params().DeveloperFee();
+                                CAmount subsidy = GetBlockSubsidy(pindex->nHeight, chainparams.GetConsensus());
+
+                                // Calculate the developer fee amount as a percentage of the subsidy
+                                CAmount nDeveloperFeeAmountValue = subsidy * nDeveloperFeeAmount / 100;
+
+                           
+                               // ! Uncomment these if you want to debug the values!
+                               // LogPrintf("==>GetDeveloperFeeAddress: (validation)   %s \n", GetDeveloperFeeAddress);
+                               // LogPrintf("==>nDeveloperFeeStart Block: (validation)  %s \n", nDeveloperFeeStart);
+                               // LogPrintf("==>nSubsidy: (validation)  %s \n", nSubsidy);
+                               // This will always say the DeveloperFeeAmountValue even if devfee isn't activated
+                               // LogPrintf("==>nDeveloperFeeAmountValue: (validation)   %s \n", nDeveloperFeeAmountValue);
+                           
+                               // Only enforce developer fee if block height is greater than nDeveloperFeeStart
+                               if (pindex->nHeight >= nDeveloperFeeStart) {
+                                   // Check 15% Amount
+                                   if (block.vtx[0]->vout[1].nValue != nDeveloperFeeAmountValue) {
+                                       return state.DoS(100,
+                                                       error("ConnectBlock(): coinbase Developer Fee Amount Is Invalid. Actual: %ld Should be:%ld ",
+                                                               block.vtx[0]->vout[1].nValue, nDeveloperFeeAmountValue),
+                                                       REJECT_INVALID, "bad-cb-developer-fee-amount");
+                                   }
+                                   // Check developer fee address
+                                   if (HexStr(block.vtx[0]->vout[1].scriptPubKey) != HexStr(scriptPubKeyDeveloperFeeAddress)) {
+                                       return state.DoS(100,
+                                                       error("ConnectBlock(): coinbase Developer Fee Address Is Invalid. Actual: %s Should Be: %s \n",
+                                                               HexStr(block.vtx[0]->vout[1].scriptPubKey), HexStr(scriptPubKeyDeveloperFeeAddress)),
+                                                       REJECT_INVALID, "bad-cb-developer-fee-address");
+                                   }
+                               }
     if (!control.Wait())
         return state.DoS(100, error("%s: CheckQueue failed", __func__), REJECT_INVALID, "block-validation-failed");
     int64_t nTime4 = GetTimeMicros(); nTimeVerify += nTime4 - nTime2;

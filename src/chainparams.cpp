@@ -116,6 +116,15 @@ public:
         //consensus.defaultAssumeValid = uint256S("0x00001828d845205a951f9609e011775e035b00c7fb476310261ef30460cdccab");// 0
 		consensus.defaultAssumeValid = uint256S("0x0"); // 5000
 
+        // 10% of Block reward to operations wallet
+        nDeveloperFee = 10;
+ 
+        // This is the block height when the devfee starts working
+        nDeveloperFeeStart = 1;
+  
+        // Developer wallet address
+        strDeveloperFeeAddress = std::string("AeD4pPi3D5kB9aMEgH3eRHoD6XMKbrpRAW");
+
         /**
          * The message start string is designed to be unlikely to occur in normal data.
          * The characters are rarely used upper ASCII, not valid as UTF-8, and produce
