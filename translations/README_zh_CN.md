@@ -7,13 +7,13 @@ AdventureCoin 核心 [ADVC]
 选择语言：[EN](/README.md) | CN | [PT](./README_pt_BR.md) | [FA](./README_fa_IR.md) | [VI](./README_vi_VN.md) | [JA](./README_ja_JP.md)
 
 ## 欢迎，冒险家！🌍
-与**AdventureCoin**一起踏上旅程，这是一款由人民打造、为人民而生的加密宝藏。AdventureCoin 不仅仅是一种货币——它更是一项将加密货币带给所有寻求它的人的使命。没有ASIC矿机、没有ICO、没有预挖，AdventureCoin**为民所用**，由民所造。
+踏上**冒险币**的旅程，这是由人民创造、为人民而生的加密宝藏。冒险币不仅仅是一种货币，更是将加密货币带给所有寻求它的人的使命。没有ASIC矿机、没有ICO、没有预挖，冒险币**为人民而生**，由人民而生。
 
-在这个世界上，**只有CPU**才能引领你走向胜利。无论你使用的是老式台式机还是现代机器，任何拥有计算机处理器的人都可以挖矿**AdventureCoin**。它去中心化、公平，是迈向权力掌握在多数人手中的新世界的一步。
+在这个世界上，**只有CPU**才能引领你走向胜利。无论你使用的是古老的台式机还是现代的机器，任何拥有计算机处理器的人都可以挖矿**冒险币**。它去中心化、公平，是迈向权力掌握在多数人手中的新世界的一步。
 
-AdventureCoin Core是通往这个新世界的大门，它通过**yespowerADVC**算法提供**第一层区块链**体验，确保挖矿对所有人而言都是真正**公平的**。
+冒险币核心是通往这个新世界的大门，它通过**yespowerADVC**算法提供**第一层区块链**体验，确保挖矿对所有人而言都是一项真正**公平的追求**。
 
-有关AdventureCoin网络使用的默认费用信息，请参阅[费用建议](doc/fee-recommendation.md)。
+有关 AdventureCoin 网络使用的默认费用信息，请参阅[费用建议](doc/fee-recommendation.md)。
 
 **网站**：[AdventureCoin](https://www.adventurecoin.quest/)。
 

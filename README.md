@@ -10,7 +10,7 @@ Select language: EN | [CN](./translations/README_zh_CN.md) | [PT](./translations
 ## Welcome, Adventurer! 🌍  
 Embark on a journey with **AdventureCoin**, a crypto treasure built for the people, by the people. AdventureCoin is not just a currency — it's a quest to bring cryptocurrency to all who seek it. With no ASICs, no ICO, and no premine, AdventureCoin is **for the people**, by the people.
 
-In this world, **only CPUs** will lead you to victory. Whether you're using an ancient desktop or a modern machine, **AdventureCoin** can be mined by anyone who has a computer processor. It’s decentralized, fair, and a step towards a new world where power lies in the hands of the many.
+In this world, **only CPUs** will lead you to victory. Whether you're using an ancient desktop or a modern machine, **AdventureCoin** can be mined by anyone who has a computer processor. It’s decentralized, fair, and a step towards a new world where power lies in the hands of many.
 
 AdventureCoin Core is the gateway to this new world, offering a **layer 1 blockchain** experience with the **yespowerADVC** algorithm, ensuring that mining remains a truly **fair quest** for all.
 
