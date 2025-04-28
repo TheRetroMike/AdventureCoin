@@ -4,7 +4,7 @@
 AdventureCoin Core [ADVC]
 </h1>
 
-Chọn ngôn ngữ: [EN](/README.md) | [CN](./translations/README_zh_CN.md) | [PT](./translations/README_pt_BR.md) | [FA](./translations/README_fa_IR.md) | VI | [JA](./translations/README_ja_JP.md)
+Chọn ngôn ngữ: [EN](/README.md) | [CN](./README_zh_CN.md) | [PT](./README_pt_BR.md) | [FA](./README_fa_IR.md) | VI | [JA](./README_ja_JP.md)
 
 ## Chào mừng, Nhà thám hiểm! 🌍
 Hãy bắt đầu cuộc hành trình với **AdventureCoin**, một kho báu tiền điện tử được xây dựng cho mọi người, bởi mọi người. AdventureCoin không chỉ là một loại tiền tệ — mà là một nhiệm vụ mang tiền điện tử đến với tất cả những ai tìm kiếm nó. Không có ASIC, không có ICO và không có tiền khai thác trước, AdventureCoin là **dành cho mọi người**, do mọi người.

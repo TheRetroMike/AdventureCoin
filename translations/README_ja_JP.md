@@ -4,7 +4,7 @@
 AdventureCoin Core [ADVC]
 </h1>
 
-言語を選択: [EN](/README.md) | [CN](./README_zh_CN.md) | [PT](./translations/README_pt_BR.md) | [FA](./translations/README_fa_IR.md) | [VI](./translations/README_vi_VN.md) | JA
+言語を選択: [EN](/README.md) | [CN](./README_zh_CN.md) | [PT](./README_pt_BR.md) | [FA](./README_fa_IR.md) | [VI](./README_vi_VN.md) | JA
 
 ## ようこそ、冒険者！ 🌍
 人々によって、人々のために作られた暗号通貨の宝、**AdventureCoin** で旅に出ましょう。 AdventureCoinは単なる通貨ではありません。暗号通貨を求めるすべての人にその恩恵をもたらすための探求です。ASIC、ICO、プレマイニングを一切使用せず、AdventureCoinは**人々のための**、人々によるものです。

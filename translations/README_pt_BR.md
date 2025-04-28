@@ -4,7 +4,7 @@
 AdventureCoin Core [ADVC]
 </h1>
 
-Selecione o idioma: [EN](/README.md) | [CN](./translations/README_zh_CN.md) | PT | [FA](./translations/README_fa_IR.md) | [VI](./translations/README_vi_VN.md) | [JA](./translations/README_ja_JP.md)
+Selecione o idioma: [EN](/README.md) | [CN](./README_zh_CN.md) | PT | [FA](./README_fa_IR.md) | [VI](./README_vi_VN.md) | [JA](./README_ja_JP.md)
 
 ## Bem-vindo, aventureiro! 🌍
 Embarque em uma jornada com **AdventureCoin**, um tesouro criptográfico criado para o povo, pelo povo. AdventureCoin não é apenas uma moeda — é uma busca para levar criptomoedas a todos que as buscam. Sem ASICs, sem ICOs e sem pré-mineração, a AdventureCoin é **para o povo**, pelo povo.
