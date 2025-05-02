@@ -142,7 +142,11 @@ public:
         // This is fine at runtime as we'll fall back to using them as a oneshot if they dont support the
         // service bits we want, but we should get them updated to support all service bits wanted by any
         // release ASAP to avoid it where possible.
-        // vSeeds.emplace_back("seed-main.adventurecoincoin.info");		
+        vSeeds.emplace_back("157.180.76.198"); // EU - NovaGrid	
+        vSeeds.emplace_back("34.124.247.1"); // APAC - NovaGrid
+        vSeeds.emplace_back("178.156.175.223"); // NA-EAST - NovaGrid
+        vSeeds.emplace_back("5.78.108.16"); // NA-WEST - NovaGrid
+        vSeeds.emplace_back("34.39.151.195"); // SA - NovaGrid	
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,23);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,10);
