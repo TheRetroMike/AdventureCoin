@@ -143,6 +143,7 @@ public:
         // This is fine at runtime as we'll fall back to using them as a oneshot if they dont support the
         // service bits we want, but we should get them updated to support all service bits wanted by any
         // release ASAP to avoid it where possible.
+	vSeeds.emplace_back("seed.adventurecoin.quest");
         vSeeds.emplace_back("157.180.76.198"); // EU - NovaGrid	
         vSeeds.emplace_back("34.124.247.1"); // APAC - NovaGrid
         vSeeds.emplace_back("178.156.175.223"); // NA-EAST - NovaGrid
